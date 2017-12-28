@@ -1,0 +1,5 @@
+package com.hit.model;
+
+public enum OrderStatus {
+	ORDER_PLACED, ORDERE_VERIFIED, PAYMENT_APPROVED, ITEM_DISPATCHED, ITEM_ARRIVED
+}
