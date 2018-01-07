@@ -14,6 +14,7 @@ public class DayOfWeekBasedRegistrationInterceptor extends HandlerInterceptorAda
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException
 	{
+		// This method would be called before executing the request handler method for the current request
 		long startTime = System.currentTimeMillis();
 		System.out.println("[RegistrationInterceptor/preHandle] Request URL::" + request.getRequestURL().toString()
                 + " Sent to Handler :: Current Time=" + startTime);
@@ -29,6 +30,7 @@ public class DayOfWeekBasedRegistrationInterceptor extends HandlerInterceptorAda
 	 @Override
 	    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 	            ModelAndView modelAndView) throws Exception {
+		 // This method would be called after executing the request handler method for the current request
 	        System.out.println("[RegistrationInterceptor/postHandle] Request URL::" + request.getRequestURL().toString()
 	                + " Sent to Handler :: Current Time=" + System.currentTimeMillis());
 	        //we can add attributes in the modelAndView and use that in the view page
@@ -40,6 +42,7 @@ public class DayOfWeekBasedRegistrationInterceptor extends HandlerInterceptorAda
 	    public void afterCompletion(HttpServletRequest request,
 	            HttpServletResponse response, Object handler, Exception ex)
 	            throws Exception {
+		 // This method would be called after response object is produced by the view for the request
 	        long startTime = (Long) request.getAttribute("startTime");
 	        System.out.println("[RegistrationInterceptor/afterComplete] Request URL::" + request.getRequestURL().toString()
 	                + ":: End Time=" + System.currentTimeMillis());
