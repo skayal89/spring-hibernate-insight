@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 public class Customer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // to work with auto_increment column
     @Column(name = "customerId")
     private int id;
     private String name;

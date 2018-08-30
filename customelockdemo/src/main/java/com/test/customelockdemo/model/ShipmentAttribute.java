@@ -9,9 +9,9 @@ import javax.persistence.*;
 @Data
 public class ShipmentAttribute {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="shipmentAttributeId")
-    private Long id;
+    private int id;
     private String shipmentId;
     private String name;
     private String value;

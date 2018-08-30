@@ -3,6 +3,7 @@ package com.test.customelockdemo.resource;
 import com.test.customelockdemo.model.Customer;
 import com.test.customelockdemo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,8 @@ public class CustomerResource {
     }
 
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-    void add(Customer customer){
+    @ResponseStatus(HttpStatus.CREATED)
+    void add(@RequestBody Customer customer){
         customerService.add(customer);
     }
 }

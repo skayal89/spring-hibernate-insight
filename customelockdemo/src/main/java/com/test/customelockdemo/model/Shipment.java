@@ -6,12 +6,12 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Shipment", catalog = "stock")
+@Table(name = "Shipment")
 @Data
 public class Shipment {
     @Id
     @Column(name = "shipmentId")
-    private String id;
+    private int id;
 
     private String pinCode;
     private Double totalPrice;
