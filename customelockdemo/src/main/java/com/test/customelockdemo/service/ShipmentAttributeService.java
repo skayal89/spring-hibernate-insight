@@ -10,4 +10,5 @@ public interface ShipmentAttributeService {
     List<ShipmentAttribute> getAllAttributes(String shipmentId);
     ShipmentAttribute get(String shipmentId, String attributeName);
     String findValue(String shipmentId, String attributeName);
+    void updateValue(String shipmentId, String attributeName, String newValue);
 }

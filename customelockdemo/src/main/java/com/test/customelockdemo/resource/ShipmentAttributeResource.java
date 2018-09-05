@@ -35,4 +35,9 @@ public class ShipmentAttributeResource {
     String fetch(@RequestParam String shipmentId, @RequestParam("name") String attributeName){
         return attributeService.findValue(shipmentId, attributeName);
     }
+
+    @PostMapping(path = "/update")
+    void update(@RequestBody ShipmentAttribute attribute){
+        attributeService.updateValue(attribute.getShipmentId(), attribute.getName(), attribute.getValue());
+    }
 }

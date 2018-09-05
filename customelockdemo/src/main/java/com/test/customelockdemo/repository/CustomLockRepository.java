@@ -10,4 +10,5 @@ import java.util.List;
 
 @Repository
 public interface CustomLockRepository extends JpaRepository<CustomLockEntity, Integer>, CustomLockRepositoryCustom {
+    List<CustomLockEntity> findAllByEntityIdAndEntityName(String entityId, CustomLockNameEnum entityName);
 }

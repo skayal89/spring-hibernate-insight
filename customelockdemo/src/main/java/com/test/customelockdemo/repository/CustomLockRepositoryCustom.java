@@ -18,5 +18,4 @@ import java.util.List;
  */
 public interface CustomLockRepositoryCustom {
     boolean lockEntities(CustomLockEntity lockEntity, LockMode lockMode, int queryTimeOutInSeconds);
-    List<CustomLockEntity> findByEntityIdAndName(CustomLockNameEnum entityName, String entityId);
 }

@@ -37,4 +37,13 @@ public class ShipmentAttributeServiceImpl implements ShipmentAttributeService {
     public String findValue(String shipmentId, String attributeName) {
         return shipmentAttributeRepository.findValueByShipmentIdAndName(shipmentId, attributeName).orElse(null);
     }
+
+    @Override
+    public void updateValue(String shipmentId, String attributeName, String newValue) {
+        ShipmentAttribute attribute=shipmentAttributeRepository.findOneByShipmentIdAndName(shipmentId, attributeName);
+        if(attribute!=null){
+            attribute.setValue(newValue);
+        }
+        shipmentAttributeRepository.save(attribute);
+    }
 }

@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface ShipmentAttributeRepository extends JpaRepository<ShipmentAttribute, Integer>, ShipmentAttributeRepositoryCustom {
+
     List<ShipmentAttribute> findAllByShipmentId(String shipmentId);
     ShipmentAttribute findOneByShipmentIdAndName(String shipmentId, String name);
 

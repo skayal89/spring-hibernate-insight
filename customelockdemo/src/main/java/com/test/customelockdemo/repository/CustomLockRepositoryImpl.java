@@ -35,16 +35,4 @@ public class CustomLockRepositoryImpl implements CustomLockRepositoryCustom {
         return (result != null && !result.isEmpty());
     }
 
-    @Override
-    public List<CustomLockEntity> findByEntityIdAndName(CustomLockNameEnum entityName, String entityId) {
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery criteriaQuery = criteriaBuilder.createQuery(CustomLockEntity.class);
-        Root root = criteriaQuery.from(CustomLockEntity.class);
-        criteriaQuery.select(root)
-                .where(
-                criteriaBuilder.equal(root.get("entityId"),entityId),
-                criteriaBuilder.equal(root.get("entityName"), entityName)
-        );
-        return entityManager.createQuery(criteriaQuery).getResultList();
-    }
 }

@@ -34,6 +34,11 @@ public class CustomLockServiceImpl implements CustomLockService {
         acquireLock(lockEntity, LockMode.PESSIMISTIC_WRITE, queryTimeOut);
     }
 
+    @Override
+    public List<CustomLockEntity> findAllByIdAndName(CustomLockNameEnum entityName, String entityId) {
+        return customLockRepository.findAllByEntityIdAndEntityName(entityId, entityName);
+    }
+
     /**
      * @param lockEntity            entityName: Custom Lock Entity Type (ENUM) on which we want to acquire a lock. entityId: Primary key in custom_lock table , denoting the row in db on which we want to acquire the lock
      * @param lockMode              The type of lock we want to acquire on the entity, Exclusive(PESSIMISTIC) or shared
